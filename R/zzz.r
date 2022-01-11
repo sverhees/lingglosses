@@ -1,4 +1,4 @@
-#' Create a temporal file for gloss list when the package is loaded
+#' Create a temporary file for the gloss list when the package is loaded
 #'
 #' @author George Moroz <agricolamz@gmail.com>
 #' @noRd
@@ -17,7 +17,7 @@
   invisible()
 }
 
-#' Creates a name of the hidden variable for tracking glosses
+#' Creates a name for the hidden variable for tracking glosses
 #'
 #' @author George Moroz <agricolamz@gmail.com>
 #' @noRd
@@ -30,9 +30,9 @@ get_variable_name <- function(){
   gloss_variable
 }
 
-#' Make a small caps
+#' Make small caps
 #'
-#' Convert upper script to small caps.
+#' Convert upper case to small caps.
 #'
 #' @author George Moroz <agricolamz@gmail.com>
 #' @param gloss vector of characters.
