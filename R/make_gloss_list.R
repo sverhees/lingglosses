@@ -1,13 +1,13 @@
 #' Make a gloss list
 #'
-#' Creates a gloss list based on glosses used in \code{\link{gloss_example}}. This function tries to guess the meaning of used glosses based on some internal database or database provided by user. You shouldn't treat result as carved in stone: you can copy, modify and paste in your markdown document. If you want your glossing list to be created automatically with \code{make_gloss_list} you can compile your own table in the \code{definition_source} argument.
+#' Creates a list of glosses based on glosses used in \code{\link{gloss_example}}. This function tries to guess the meaning of glosses based on some internal database or a database provided by the user. You shouldn't treat the result as carved in stone: you can copy, modify and paste in your markdown document. If you want your list of glosses to be created automatically with \code{make_gloss_list}, you can compile your own table and enter it in the \code{definition_source} argument.
 #'
 #' @author George Moroz <agricolamz@gmail.com>
-#' @param definition_source dataframe with the columns \code{gloss} and \code{definition} that helps to automatic search for the gloss definitions.
-#' @param remove_glosses character vector that contains glosses that should be removed from the abbreviation list.
+#' @param definition_source dataframe with the columns \code{gloss} and \code{definition} that helps to find the definitions of glosses automatically.
+#' @param remove_glosses character vector that contains glosses that should be removed from the list of abbreviations.
 #' @param all_possible_variants logical. Some glosses have multiple definitions.
-#' @param annotate_problematic logical. Whether emphasize duplicated and definitionless glosses
-#' @return a string with glosses and their definitions gathered from \code{definition_source} table.
+#' @param annotate_problematic logical. Whether or not to emphasize duplicated glosses and glosses lacking a definition.
+#' @return a string with glosses and their definitions gathered from \code{definition_source} table
 #' @importFrom knitr asis_output
 #' @importFrom knitr opts_current
 #' @importFrom knitr is_latex_output
@@ -86,7 +86,7 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
     # keep only those that are present in the document -------------------------
     glosses_dataset <- glosses_dataset[glosses_dataset$gloss %in% gloss_list, ]
 
-    # for those glosses that are not present in our and user's database --------
+    # for those glosses that are not present in our and the user's database --------
     definitionless <- gloss_list[!(gloss_list %in% glosses_dataset$gloss)]
 
     if(length(definitionless) > 0){
@@ -98,7 +98,7 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
                    weight = 1)))
     }
 
-    # sort after addition definitionless glosses -------------------------------
+    # sort after addition of definitionless glosses -------------------------------
     glosses_dataset <- glosses_dataset[order(glosses_dataset$gloss),]
 
     if(isFALSE(all_possible_variants)){
@@ -125,7 +125,7 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
       glosses_dataset <- glosses_dataset[keep,]
     }
 
-    # generate non breaking space ----------------------------------------------
+    # generate non-breaking space ----------------------------------------------
     if(knitr::is_latex_output()){
       gloss_sep = " --- "
     } else {
@@ -139,7 +139,7 @@ make_gloss_list <- function(definition_source = lingglosses::glosses_df,
     knitr::asis_output(res)
 
   } else{
-    warning(paste0("There is no glosses in document ",
+    warning(paste0("There are no glosses in the document ",
                    rmarkdown::metadata$title,
                    " or its fragment."))
   }
