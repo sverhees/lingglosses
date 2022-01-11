@@ -1,10 +1,10 @@
 #' Gloss an example
 #'
-#' Adds glosses to the glosses list and adds small capitals to glosses. Escapes strings that begins and ends with curly brackets.
+#' Adds glosses to the list of glosses and adds small capitals to glosses. Escapes strings that begin and end with curly brackets.
 #'
 #' @author George Moroz <agricolamz@gmail.com>
 #'
-#' @param glosses character vector with glosses in upper case.
+#' @param glosses character vector with glosses in upper case
 #'
 #' @return vector of small capitalized glosses (if string is in the upper case) and not glosses (if string is not in the upper case)
 #'
