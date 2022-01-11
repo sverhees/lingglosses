@@ -9,11 +9,11 @@
 #' @param free_translation character vector of the length one for the free translation line.
 #' @param annotation character vector of the length one for the annotation line (above translation).
 #' @param comment character vector of the length one for the comment line (under the free translation line).
-#' @param line_length integer vector of the length one that denotes maximum number of characters per one line.
-#' @param italic_transliteration logical variable that denotes, whether user wants to italicize your example.
-#' @param drop_transliteration logical variable that denotes, whether user wants to have an example without transliteration.
-#' @param intext logical variable that denotes, whether example should be considered as part of the text (\code{TRUE}) or as a standalone paragraph (\code{FALSE})
-#' @param write_to_db logical variable that denotes, whether example should be added to the example database.
+#' @param line_length integer vector of the length one that denotes the maximum number of characters per line.
+#' @param italic_transliteration logical variable that denotes whether the user wants to italicize their example.
+#' @param drop_transliteration logical variable that denotes whether the user wants to have an example without transliteration.
+#' @param intext logical variable that denotes whether the example should be considered part of the text (\code{TRUE}) or as a standalone paragraph (\code{FALSE})
+#' @param write_to_db logical variable that denotes whether the example should be added to the example database.
 #' @return html/latex output(s) with glossed examples.
 #'
 #' @examples
