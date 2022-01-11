@@ -8,8 +8,8 @@
 #' @param free_translation character vector of the length one for the free translation line.
 #' @param annotation character vector of the length one for the annotation line (above translation).
 #' @param comment character vector of the length one for the comment line (under the free translation line).
-#' @param drop_transliteration logical variable that denotes, whether user wants to have an example without transliteration.
-#' @param write_to_db logical variable that denotes, whether example should be added to the example database.
+#' @param drop_transliteration logical variable that denotes whether the user wants to have an example without transliteration.
+#' @param write_to_db logical variable that denotes whether the example should be added to the example database.
 #' @param counter double, value that denotes example id. By default gathered automatically through hidden variables in the Rmd document.
 
 #' @return dataframe with
