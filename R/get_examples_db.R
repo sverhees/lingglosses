@@ -3,7 +3,7 @@
 #' Reads database of interlinear examples collected through the whole document.
 #'
 #' @author George Moroz <agricolamz@gmail.com>
-#' @return a dataframe with all interlinear examples from rmarkdown document.
+#' @return a dataframe with all interlinear examples from a rmarkdown document.
 #' @importFrom utils read.table
 #' @export
 
